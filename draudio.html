@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draudio</title>
+  <link rel="stylesheet" href="res/css/master.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="res/css/ckin.css">
+  
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#01" class="active">01</a></li>
+      <li><a href="#02">02</a></li>
+      <li><a href="#03">03</a></li>
+      <li><a href="#04">04</a></li>
+      <li><a href="#05">05</a></li>
+      <li><a href="#06">06</a></li>
+    </ul>
+  </nav>
+  <a href="#draudio" class="logo">D</a>
+  <a href="https://github.com/DivyanshRoy/Draudio-Audio2Image" class="github">
+    <i class="icon ion-logo-github"></i>
+  </a>
+  <main id="draudio">
+    <h1>D R A U D I O</h1>
+    <h2>Generate Visualizations from Audio</h2>
+    <a href="#01"><i class="icon ion-md-arrow-down"></i></a>
+  </main>
+  <section data-target="#01" id="01">
+    <p><i>
+      Create visualizations to accompany your songs. Play around with the bits and pieces and find a visualization that suits your needs.</i>
+      <br><br>Scroll down to learn more
+    </p>
+  </section>
+  <section data-target="#02" id="02">
+
+    <div>
+        <!-- <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+          <source src="Toy Piano.mp4" type="video/mp4"></source>
+        </video>     -->
+        
+        <!-- <video width="320" height="320" controls>
+          <source src="Toy Piano.mp4" type="video/mp4"></source>
+        </video> -->
+     </div>
+
+     <div id='player' style="margin-right: 20px">
+      <video width="405" height="300" id='video-element0'>
+        <source src="res/src/genre1 cropped.mp4" type="video/mp4"></source>
+      </video>
+      <div id='controls'>
+        <progress id='progress-bar0' min='0' max='100' value='0'>0% played</progress>
+        <button id='btnReplay0' class='replay' title='replay' accesskey="R" onclick='replayVideo(0);'>Replay</button> 
+        <button id='btnPlayPause0' class='play' title='play' accesskey="P" onclick='playPauseVideo(0);'>Play</button>
+        <button id='btnStop0' class='stop' title='stop' accesskey="X" onclick='stopVideo(0);'>Stop</button>
+        <!-- <input type="range" id="volume-bar0" title="volume" min="0" max="1" step="0.1" value="1">
+        <button id='btnMute0' class='mute' title='mute' onclick='muteVolume(0);'>Mute</button>  
+        <button id='btnFullScreen0' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(0);'>[&nbsp;&nbsp;]</button> -->
+      </div>
+    </div>  
+    <div style="clear:both"></div>
+
+    <div id='player' style="margin-right: 20px">
+      <video width="405" height="300" id='video-element1'>
+        <source src="res/src/genre2 cropped.mp4" type="video/mp4"></source>
+      </video>
+      <div id='controls'>
+        <progress id='progress-bar1' min='0' max='100' value='0'>0% played</progress>
+        <button id='btnReplay1' class='replay' title='replay' accesskey="R" onclick='replayVideo(1);'>Replay</button> 
+        <button id='btnPlayPause1' class='play' title='play' accesskey="P" onclick='playPauseVideo(1);'>Play</button>
+        <button id='btnStop1' class='stop' title='stop' accesskey="X" onclick='stopVideo(1);'>Stop</button>
+        <!-- <input type="range" id="volume-bar1" title="volume" min="0" max="1" step="0.1" value="1">
+        <button id='btnMute1' class='mute' title='mute' onclick='muteVolume(1);'>Mute</button>  
+        <button id='btnFullScreen1' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(1);'>[&nbsp;&nbsp;]</button> -->
+      </div>
+    </div>  
+    <div style="clear:both"></div>
+
+    <div id='player'>
+      <video width="405" height="300" id='video-element2'>
+        <source src="res/src/genre3 cropped.mp4" type="video/mp4"></source>
+      </video>
+      <div id='controls'>
+        <progress id='progress-bar2' min='0' max='100' value='0'>0% played</progress>
+        <button id='btnReplay2' class='replay' title='replay' accesskey="R" onclick='replayVideo(2);'>Replay</button> 
+        <button id='btnPlayPause2' class='play' title='play' accesskey="P" onclick='playPauseVideo(2);'>Play</button>
+        <button id='btnStop2' class='stop' title='stop' accesskey="X" onclick='stopVideo(2);'>Stop</button>
+        <!-- <input type="range" id="volume-bar2" title="volume" min="0" max="1" step="0.1" value="1">
+        <button id='btnMute2' class='mute' title='mute' onclick='muteVolume(2);'>Mute</button>  
+        <button id='btnFullScreen2' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(2);'>[&nbsp;&nbsp;]</button> -->
+      </div>
+    </div>  
+    <div style="clear:both"></div>
+
+     <!-- <video width="405" height="300" onmouseover="this.play()" onclick="this.pause()" this.currentTime=0;>
+      <source src="genre1 cropped.mp4" type="video/mp4"></source>
+    </video>    
+
+    <video width="405" height="300" onmouseover="this.play()" onclick="this.pause()" this.currentTime=0;>
+      <source src="genre2 cropped.mp4" type="video/mp4"></source>
+    </video>    
+
+    <video width="405" height="300" onmouseover="this.play()" onclick="this.pause()" this.currentTime=0;>
+      <source src="genre3 cropped.mp4" type="video/mp4"></source>
+    </video>     -->
+     <!-- <video width="1170" height="540" autoplay>
+      <source src="Toy Piano.mp4" type="video/mp4">
+    </video> -->
+    <!-- <div onclick ="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+      <video width="400px" height="auto" id="video1" onmouseover="this.play()" onmouseout="this.pause()">
+        <source src="beethoven.mp4" type="video/mp4">
+
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <p>The Science of Astronomy is sublime and beautiful. Noble, elevating, consoling, divine, it gives us wings, and bears us through Infinitude. In these ethereal regions all is pure, luminous, and splendid. Dreams of the Ideal, even of the Inaccessible, weave their subtle spells upon us. The imagination soars aloft, and aspires to the sources of Eternal Beauty.</p> -->
+
+  </section>
+  <section data-target="#025" id="025">
+    <p>
+      <strong>With Automatic Color Palette assignment, </strong>we assign different color schemes based on the song type.
+      
+    </p>
+  </section>
+  <section data-target="#03" id="03">
+
+    <div id='player'>
+      <video width="810" height="600" id='video-element3'>
+        <source src='res/src/colormaps cropped.mp4' type='video/mp4'>
+      </video>
+      <div id='controls'>
+        <progress id='progress-bar3' min='0' max='100' value='0'>0% played</progress>
+        <button id='btnReplay3' class='replay' title='replay' accesskey="R" onclick='replayVideo(3);'>Replay</button> 
+        <button id='btnPlayPause3' class='play' title='play' accesskey="P" onclick='playPauseVideo(3);'>Play</button>
+        <button id='btnStop3' class='stop' title='stop' accesskey="X" onclick='stopVideo(3);'>Stop</button>
+        <button id='btnMute3' class='mute' title='mute' onclick='muteVolume(3);'>Mute</button>  
+        <button id='btnFullScreen3' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(3);'>[&nbsp;&nbsp;]</button>
+        <input type="range" id="volume-bar3" title="volume" min="0" max="1" step="0.1" value="1">
+        
+      </div>
+    </div>  
+    <div style="clear:both"></div>
+    <p style="margin-left: 30px; font-size:35px; text-align: left;">
+      Here's how you can choose other color palettes yourself.
+      <!-- If you would like other colors, here's how you can choose them yourself. -->
+    </p>
+
+<!--     <video width="810" height="600" onmouseover="this.play()" onclick="this.pause()" this.currentTime=0;>
+      <source src="colormaps cropped.mp4" type="video/mp4" style="justify-content:center;"></source>
+    </video>     -->
+    <!-- <p>What greater delight can be conceived, on a fine spring evening, at the hour when the crescent moon is shining in the West amid the last glimmer of twilight, than the contemplation of that grand and silent spectacle of the stars stepping forth in sequence in the vast Heavens? All sounds of life die out upon the earth, </p>
+    <p>
+      the last notes of the sleepy birds have sunk away, the Angelus of the church hard by has rung the close of day.
+      But if life is arrested around us, we may seek it in the Heavens. These incandescing orbs are so many points of interrogation suspended above our heads in the inaccessible depths of space....
+    </p> -->
+  </section>
+  <section data-target="#04" id="04">
+      <div id='player'>
+      <video width="810" height="600" id='video-element4'>
+        <source src='res/src/param changes cropped.mp4' type='video/mp4'>
+      </video>
+      <div id='controls'>
+        <progress id='progress-bar4' min='0' max='100' value='0'>0% played</progress>
+        <button id='btnReplay4' class='replay' title='replay' accesskey="R" onclick='replayVideo(4);'>Replay</button> 
+        <button id='btnPlayPause4' class='play' title='play' accesskey="P" onclick='playPauseVideo(4);'>Play</button>
+        <button id='btnStop4' class='stop' title='stop' accesskey="X" onclick='stopVideo(4);'>Stop</button>
+        <button id='btnMute4' class='mute' title='mute' onclick='muteVolume(4);'>Mute</button>  
+        <button id='btnFullScreen4' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(4);'>[&nbsp;&nbsp;]</button>
+        <input type="range" id="volume-bar4" title="volume" min="0" max="1" step="0.1" value="1">
+        
+      </div>
+    </div>  
+    <div style="clear:both"></div>
+    <p style="margin-left: 30px; font-size:30px; text-align: left">
+      You can also change the shapes by varying the <strong style="font-size: 25px">Minimum Value</strong> and
+      <strong style="font-size: 25px;">Maximum Value</strong> parameters.
+    </p>
+  </section>
+  
+  <section data-target="#045" id="045">
+    <p style="font-size:40px; line-height: 30px">How is this generated?
+    <br><br>
+    <font style="font-size: 25px;">
+    <ul style="color: black">
+      <li>
+        The input is an audio file which is used to generate 
+        <a href="https://en.wikipedia.org/wiki/Spectrogram" style="color:black"><u><strong>Spectrograms</strong></u></a>
+         and 
+        <a href="https://en.wikipedia.org/wiki/Chroma_feature" style="color:black"><u><strong>Chromagrams</strong></u></a>.
+        <!-- We get an audio file as input and we generate 
+        <a href="https://en.wikipedia.org/wiki/Spectrogram" style="color:black"><u><strong>Spectrograms</strong></u></a>
+         and 
+        <a href="https://en.wikipedia.org/wiki/Chroma_feature" style="color:black"><u><strong>Chromagrams</strong></u></a>
+          from it. -->
+      </li>
+
+      <li>
+        The Spectrogram is used as input to an Image Classification Model which predicts the Genre of the song.
+        <!-- We send the Spectrogram as input to an Image Classification Model which predicts the Genre of the song. -->
+      </li>
+      
+      <li>
+        The predicted genre is used in choosing the Color Palette of the visualization.
+      </li>
+      
+      <li>
+        The most dominant chroma value is extracted from each time step in the Chromagram.
+        <!-- We extract the most dominant chroma value from each time step in the Chromagram. -->
+      </li>
+
+      <li>
+        Each one of the 12 possible chroma values is mapped to a color from the Color Palette.
+        <!-- We map the 12 possible chroma values in the Chromagram to 12 colors in the Color Palette.  -->
+      </li>
+
+      <li>
+        Similar colors that are adjacent to each other are merged to create blocks. Each block is adjacent to a block of a different color.
+        <!-- We merge similar colors that are adjacent to each other, to create blocks in such a way that each block is adjacent to a block of a different color. -->
+      </li>
+      <li>
+        This sequence of blocks is used to generate the output image.
+        <!-- We use the above-mentioned sequence to generate the output image. -->
+      </li>
+    </ul>
+
+
+        </font>
+
+    </p>
+  </section>
+
+  <section data-target="#05" id="05">
+    <img src="res/src/flowchart2.png" height="596px" width="1279px">
+  </section>
+
+
+  <section data-target="#06" id="06">
+    <p>
+      We will be releasing an interface that can be used to generate these visualizations in a few weeks. 
+      <br>For more information feel free to reach out to me at <a href="mailto:droy41@gatech.edu">droy41@gatech.edu</a>
+      <br><br><br>
+      <font style="color: white; font-size: 30px">References:</font>
+      <ol>
+        <li>
+          <a href="https://www.cc.gatech.edu/~parikh/art.html">cc.gatech.edu/~parikh/art.html</a>
+        </li>
+        <li>
+          <a href="http://marsyas.info/downloads/datasets.html">Musical genre classification of audio signals by G. Tzanetakis et.al. in IEEE Transactions on Audio and Speech Processing 2002</a>
+        </li>
+        <li>
+          <a href="https://juiceboxinteractive.com/blog/color/">Colors that defined the decades: juiceboxinteractive.com/blog/color/</a>
+        </li>
+        <li>
+          <a href="https://github.com/jestov/universe">github.com/jestov/universe</a>
+        </li>
+      </ol>
+    </p>
+    <footer>
+      <div class="sign">
+        D R A U D I O
+      </div>
+      <div class="sign">
+        Made by <a href="https://www.linkedin.com/in/divyanshroy/">Divyansh Kumar Roy</a>, Advised by <a href="https://www.cc.gatech.edu/~parikh/">Prof. Devi Parikh</a>
+      </div>
+    </footer>
+  </section>
+  <script type="text/javascript" src="res/js/scrollspy.min.js"></script>
+</body>
+</html>
+
+<script>
+  // Get a handle to the player
+    player0       = document.getElementById('video-element0');
+    player1       = document.getElementById('video-element1');
+    player2       = document.getElementById('video-element2');
+    player3       = document.getElementById('video-element3');
+    player4       = document.getElementById('video-element4');
+    
+    btnPlayPause0 = document.getElementById('btnPlayPause0');
+    btnPlayPause1 = document.getElementById('btnPlayPause1');
+    btnPlayPause2 = document.getElementById('btnPlayPause2');
+    btnPlayPause3 = document.getElementById('btnPlayPause3');
+    btnPlayPause4 = document.getElementById('btnPlayPause4');
+    
+    btnMute0      = document.getElementById('btnMute0');
+    btnMute1      = document.getElementById('btnMute1');
+    btnMute2      = document.getElementById('btnMute2');
+    btnMute3      = document.getElementById('btnMute3');
+    btnMute4      = document.getElementById('btnMute4');
+
+    progressBar0  = document.getElementById('progress-bar0');
+    progressBar1  = document.getElementById('progress-bar1');
+    progressBar2  = document.getElementById('progress-bar2');
+    progressBar3  = document.getElementById('progress-bar3');
+    progressBar4  = document.getElementById('progress-bar4');
+
+  volumeBar0    = document.getElementById('volume-bar0');
+  volumeBar1    = document.getElementById('volume-bar1');
+  volumeBar2    = document.getElementById('volume-bar2');
+  volumeBar3    = document.getElementById('volume-bar3');
+  volumeBar4    = document.getElementById('volume-bar4');
+
+  // Update the video volume
+  // volumeBar0.addEventListener("change", function(evt) {
+  //       player0.volume = evt.target.value;
+  //   });
+  // volumeBar1.addEventListener("change", function(evt) {
+  //       player1.volume = evt.target.value;
+  //   });
+  // volumeBar2.addEventListener("change", function(evt) {
+  //       player2.volume = evt.target.value;
+  //   });
+  volumeBar3.addEventListener("change", function(evt) {
+        player3.volume = evt.target.value;
+    });
+  volumeBar4.addEventListener("change", function(evt) {
+        player4.volume = evt.target.value;
+    });
+  // document.getElementById('btnFullScreen0').disabled = true;
+  // document.getElementById('btnFullScreen1').disabled = true;
+  // document.getElementById('btnFullScreen2').disabled = true;
+  // document.getElementById('btnFullScreen').disabled = true;
+    // Add a listener for the timeupdate event so we can update the progress bar
+    player0.addEventListener('timeupdate', updateProgressBar0, false);
+    player1.addEventListener('timeupdate', updateProgressBar1, false);
+    player2.addEventListener('timeupdate', updateProgressBar2, false);
+    player3.addEventListener('timeupdate', updateProgressBar3, false);
+    player4.addEventListener('timeupdate', updateProgressBar4, false);
+    
+    // Add a listener for the play and pause events so the buttons state can be updated
+    player0.addEventListener('play', function() {
+        // Change the button to be a pause button
+        changeButtonType(btnPlayPause0, 'pause');
+    }, false);
+    player1.addEventListener('play', function() {
+        // Change the button to be a pause button
+        changeButtonType(btnPlayPause1, 'pause');
+    }, false);
+    player2.addEventListener('play', function() {
+        // Change the button to be a pause button
+        changeButtonType(btnPlayPause2, 'pause');
+    }, false);
+    player3.addEventListener('play', function() {
+        // Change the button to be a pause button
+        changeButtonType(btnPlayPause3, 'pause');
+    }, false);
+    player4.addEventListener('play', function() {
+        // Change the button to be a pause button
+        changeButtonType(btnPlayPause4, 'pause');
+    }, false);
+  
+    player0.addEventListener('pause', function() {
+        // Change the button to be a play button
+        changeButtonType(btnPlayPause0, 'play');
+    }, false);
+    player1.addEventListener('pause', function() {
+        // Change the button to be a play button
+        changeButtonType(btnPlayPause1, 'play');
+    }, false);
+    player2.addEventListener('pause', function() {
+        // Change the button to be a play button
+        changeButtonType(btnPlayPause2, 'play');
+    }, false);
+    player3.addEventListener('pause', function() {
+        // Change the button to be a play button
+        changeButtonType(btnPlayPause3, 'play');
+    }, false);
+    player4.addEventListener('pause', function() {
+        // Change the button to be a play button
+        changeButtonType(btnPlayPause4, 'play');
+    }, false);
+
+    player0.addEventListener('volumechange', function(e) { 
+        // Update the button to be mute/unmute
+        if (player0.muted) changeButtonType(btnMute0, 'unmute');
+        else changeButtonType(btnMute0, 'mute');
+    }, false);  
+    player1.addEventListener('volumechange', function(e) { 
+        // Update the button to be mute/unmute
+        if (player1.muted) changeButtonType(btnMute1, 'unmute');
+        else changeButtonType(btnMute1, 'mute');
+    }, false);  
+    player2.addEventListener('volumechange', function(e) { 
+        // Update the button to be mute/unmute
+        if (player2.muted) changeButtonType(btnMute2, 'unmute');
+        else changeButtonType(btnMute2, 'mute');
+    }, false);  
+    player3.addEventListener('volumechange', function(e) { 
+        // Update the button to be mute/unmute
+        if (player3.muted) changeButtonType(btnMute3, 'unmute');
+        else changeButtonType(btnMute3, 'mute');
+    }, false);  
+    player4.addEventListener('volumechange', function(e) { 
+        // Update the button to be mute/unmute
+        if (player4.muted) changeButtonType(btnMute4, 'unmute');
+        else changeButtonType(btnMute4, 'mute');
+    }, false);  
+
+  
+    player0.addEventListener('ended', function() { this.pause(); }, false);  
+    player1.addEventListener('ended', function() { this.pause(); }, false);  
+    player2.addEventListener('ended', function() { this.pause(); }, false);  
+    player3.addEventListener('ended', function() { this.pause(); }, false);  
+    player4.addEventListener('ended', function() { this.pause(); }, false);  
+  
+  progressBar0.addEventListener("click", seek0);
+  progressBar1.addEventListener("click", seek1);
+  progressBar2.addEventListener("click", seek2);
+  progressBar3.addEventListener("click", seek3);
+  progressBar4.addEventListener("click", seek4);
+
+  function seek0(e) {
+      var percent = e.offsetX / this.offsetWidth;
+      player0.currentTime = percent * player0.duration;
+      e.target.value = Math.floor(percent / 100);
+      e.target.innerHTML = progressBar0.value + '% played';
+  }
+
+  function seek1(e) {
+      var percent = e.offsetX / this.offsetWidth;
+      player1.currentTime = percent * player1.duration;
+      e.target.value = Math.floor(percent / 100);
+      e.target.innerHTML = progressBar1.value + '% played';
+  }
+
+  function seek2(e) {
+      var percent = e.offsetX / this.offsetWidth;
+      player2.currentTime = percent * player2.duration;
+      e.target.value = Math.floor(percent / 100);
+      e.target.innerHTML = progressBar2.value + '% played';
+  }
+
+  function seek3(e) {
+      var percent = e.offsetX / this.offsetWidth;
+      player3.currentTime = percent * player3.duration;
+      e.target.value = Math.floor(percent / 100);
+      e.target.innerHTML = progressBar3.value + '% played';
+  }
+
+  function seek4(e) {
+      var percent = e.offsetX / this.offsetWidth;
+      player4.currentTime = percent * player4.duration;
+      e.target.value = Math.floor(percent / 100);
+      e.target.innerHTML = progressBar4.value + '% played';
+  }
+
+  function playPauseVideo(num) {
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+    
+    if (player.paused || player.ended) {
+        // Change the button to a pause button
+        changeButtonType(btnPlayPause, 'pause');
+        player.play();
+    }
+    else {
+        // Change the button to a play button
+        changeButtonType(btnPlayPause, 'play');
+        player.pause();
+    }
+  }
+  
+  // Stop the current media from playing, and return it to the start position
+  function stopVideo(num) {
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+
+    player.pause();
+    if (player.currentTime) player.currentTime = 0;
+  }
+  
+  // Toggles the media player's mute and unmute status
+  function muteVolume(num) {
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+
+    if (player.muted) {
+        // Change the button to a mute button
+        changeButtonType(btnMute, 'mute');
+        player.muted = false;
+    }
+    else {
+        // Change the button to an unmute button
+        changeButtonType(btnMute, 'unmute');
+        player.muted = true;
+    }
+  }
+  
+  // Replays the media currently loaded in the player
+  function replayVideo(num) {
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+
+    resetPlayer(num);
+    player.play();
+  }
+  
+  // Update the progress bar
+  function updateProgressBar0() {
+    updateProgressBar(0);
+  }
+  function updateProgressBar1() {
+    updateProgressBar(1);
+  }
+  function updateProgressBar2() {
+    updateProgressBar(2);
+  }
+  function updateProgressBar3() {
+    updateProgressBar(3);
+  }
+  function updateProgressBar4() {
+    updateProgressBar(4);
+  }
+
+  function updateProgressBar(num) {
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+    // Work out how much of the media has played via the duration and currentTime parameters
+    var percentage = Math.floor((100 / player.duration) * player.currentTime);
+    // Update the progress bar's value
+    progressBar.value = percentage;
+    // Update the progress bar's text (for browsers that don't support the progress element)
+    progressBar.innerHTML = percentage + '% played';
+  }
+  
+  // Updates a button's title, innerHTML and CSS class
+  function changeButtonType(btn, value) {
+    btn.title     = value;
+    btn.innerHTML = value;
+    btn.className = value;
+  }
+  
+  function resetPlayer(num) {
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+    progressBar.value = 0;
+    // Move the media back to the start
+    player.currentTime = 0;
+    // Set the play/pause button to 'play'
+    changeButtonType(btnPlayPause, 'play');
+  }  
+  
+  function exitFullScreen(num) {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+  }
+  
+  function toggleFullScreen(num) {
+    //var player = document.getElementById("player");
+    if(num==0)
+    {
+      var player = player0;
+      var btnPlayPause = btnPlayPause0;
+      var btnMute = btnMute0;
+      var progressBar = progressBar0;
+      var volumeBar = volumeBar0;
+    }
+    if(num==1)
+    {
+      var player = player1;
+      var btnPlayPause = btnPlayPause1;
+      var btnMute = btnMute1;
+      var progressBar = progressBar1;
+      var volumeBar = volumeBar1;
+    }
+    if(num==2)
+    {
+      var player = player2;
+      var btnPlayPause = btnPlayPause2;
+      var btnMute = btnMute2;
+      var progressBar = progressBar2;
+      var volumeBar = volumeBar2;
+    }
+    if(num==3)
+    {
+      var player = player3;
+      var btnPlayPause = btnPlayPause3;
+      var btnMute = btnMute3;
+      var progressBar = progressBar3;
+      var volumeBar = volumeBar3;
+    }
+    if(num==4)
+    {
+      var player = player4;
+      var btnPlayPause = btnPlayPause4;
+      var btnMute = btnMute4;
+      var progressBar = progressBar4;
+      var volumeBar = volumeBar4;
+    }
+    if (player.requestFullscreen)
+        if (document.fullScreenElement) {
+            document.cancelFullScreen();
+        } else {
+            player.requestFullscreen();
+        }
+        else if (player.msRequestFullscreen)
+        if (document.msFullscreenElement) {
+            document.msExitFullscreen();
+        } else {
+            player.msRequestFullscreen();
+        }
+        else if (player.mozRequestFullScreen)
+        if (document.mozFullScreenElement) {
+            document.mozCancelFullScreen();
+        } else {
+            player.mozRequestFullScreen();
+        }
+        else if (player.webkitRequestFullscreen)
+        if (document.webkitFullscreenElement) {
+            document.webkitCancelFullScreen();
+        } else {
+            player.webkitRequestFullscreen();
+        }
+    else {
+        alert("Fullscreen API is not supported");
+        
+    }
+  }
+</script>
